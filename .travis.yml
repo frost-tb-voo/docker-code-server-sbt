@@ -1,0 +1,18 @@
+sudo: required
+
+language: scala
+
+services:
+  - docker
+
+script:
+- bash ./hooks/build
+
+deploy:
+  provider: script
+  script: bash push
+  on:
+    branch: master
+
+notifications:
+  email: false

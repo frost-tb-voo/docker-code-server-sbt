@@ -1,0 +1,9 @@
+{
+    "typescript.tsdk": "/usr/local/lib/node_modules/typescript/lib",
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorTheme": "Solarized Light",
+    "editor.formatOnSave": true,
+    "scm.alwaysShowActions": true
+}
