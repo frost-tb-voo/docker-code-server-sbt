@@ -1,6 +1,6 @@
 #!/bin/sh
 
-IMAGE=novsyama/code-server-sbt
+IMAGE=novsyama/code-server-sbt:latest
 CODER_HOME=/home/coder
 
 S_DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)

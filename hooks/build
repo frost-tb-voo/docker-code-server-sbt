@@ -2,7 +2,7 @@
 
 IMAGE=codercom/code-server:latest
 DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
-
+echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 cd ${DIR}/..
 docker pull node:latest
 docker pull mozilla/sbt:latest
@@ -13,3 +13,4 @@ docker build -t novsyama/code-server-sbt \
  .
 docker tag novsyama/code-server-sbt novsyama/code-server-sbt:local
 docker images novsyama/code-server-sbt
+
