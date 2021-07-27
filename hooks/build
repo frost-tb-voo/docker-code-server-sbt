@@ -1,16 +1,17 @@
 #!/bin/sh
 
 IMAGE=codercom/code-server:latest
+NEW_IMAGE=ghcr.io/frost-tb-voo/code-server-sbt
 DIR=$(cd $(dirname ${BASH_SOURCE:-$0}); pwd)
 echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
 cd ${DIR}/..
-docker pull node:latest
+docker pull node:lts
 docker pull mozilla/sbt:latest
 docker pull ${IMAGE}
-docker build -t novsyama/code-server-sbt \
+docker build -t ${NEW_IMAGE} \
  --build-arg VCS_REF=`git rev-parse --short HEAD` \
  --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
  .
-docker tag novsyama/code-server-sbt novsyama/code-server-sbt:local
-docker images novsyama/code-server-sbt
+docker tag ${NEW_IMAGE} ${NEW_IMAGE}:local
+docker images ${NEW_IMAGE}
 
