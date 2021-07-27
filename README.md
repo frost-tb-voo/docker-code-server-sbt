@@ -1,20 +1,16 @@
 # docker-code-server-sbt
-[![](https://img.shields.io/travis/frost-tb-voo/docker-code-server-sbt/master.svg?style=flat-square)](https://travis-ci.org/frost-tb-voo/docker-code-server-sbt/)
+[![](https://img.shields.io/github/workflow/status/frost-tb-voo/docker-code-server-sbt/Docker?style=flat-square)](https://github.com/frost-tb-voo/docker-code-server-sbt/actions/workflows/docker-publish.yml)
 [![GitHub stars](https://img.shields.io/github/stars/frost-tb-voo/docker-code-server-sbt.svg?style=flat-square)](https://github.com/frost-tb-voo/docker-code-server-sbt/stargazers)
 [![GitHub license](https://img.shields.io/github/license/frost-tb-voo/docker-code-server-sbt.svg?style=flat-square)](https://github.com/frost-tb-voo/docker-code-server-sbt/blob/master/LICENSE)
-[![Docker pulls](https://img.shields.io/docker/pulls/novsyama/code-server-sbt.svg?style=flat-square)](https://hub.docker.com/r/novsyama/code-server-sbt)
-[![Docker image-size](https://img.shields.io/docker/image-size/novsyama/code-server-sbt/latest?style=flat-square)](https://hub.docker.com/r/novsyama/code-server-sbt)
-[![Docker layers](https://img.shields.io/microbadger/layers/novsyama/code-server-sbt.svg?style=flat-square)](https://microbadger.com/images/novsyama/code-server-sbt)
 
 An unofficial extended VSCode [code-server](https://github.com/cdr/code-server) image for latest scala and sbt with [metals-vscode](https://github.com/scalameta/metals-vscode).
-See [novsyama/code-server-sbt](https://hub.docker.com/r/novsyama/code-server-sbt/)
 
 ## How
 
 ```bash
 PROJECT_DIR=<workspace absolute path>
 
-sudo docker pull novsyama/code-server-sbt
+sudo docker pull ghcr.io/frost-tb-voo/code-server-sbt
 sudo docker run --name=vscode --net=host -d \
  -v "${PROJECT_DIR}:/home/coder/project/code-server" \
  -w /home/coder/project \

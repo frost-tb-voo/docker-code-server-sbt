@@ -1,4 +1,4 @@
-FROM node:latest as extension
+FROM node:lts as extension
 
 WORKDIR /metals
 RUN git clone https://github.com/scalameta/metals-vscode.git \
